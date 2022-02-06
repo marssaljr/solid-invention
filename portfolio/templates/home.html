@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'head' %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}"> 
+{% endblock %}
+
+{% block 'main' %}
+<div class="main">
+  <div class="objects">
+    <img class="personalPhotoi" src="{% static 'images/pic.svg' %}" alt="me"/>
+    <div class="text">
+      <div class="textIntro">
+        <h1>Marçal Junior</h1>
+        <p>Full Stack Web Developer</p>
+      </div>
+      <p class="textHistory">
+        I'm a hobbyist Web Developer who study development since 10 years
+            old. I have a solid familiarity of Development procedure and
+            Security... I am nowadays growing my skillset by studying Node,
+            Next, along with Django, and Tests. I believe that with my current
+            experience I would be an excellent choice for Pleno Level/Mid-level
+            developer.
+      </p>
+      <div class="socialsBadges" style="margin-top: 1rem;">
+        <a style="margin: 0.5rem;" target="_blank" href="https://linkedin.com/in/marssaljr">
+          <i class="devicon-linkedin-plain"></i>
+        </a>
+        <a target="_blank" href="https://github.com/marssaljr">
+          <i class="devicon-github-original"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

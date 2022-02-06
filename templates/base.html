@@ -1,0 +1,56 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+{% block 'head' %}{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--<link rel="eet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">-->
+  <title>MJ{% block 'title' %}{% endblock %}</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'images/logo-mobile.svg' %}">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}"/>
+  <script src="{% static 'js/navbar.js' %}"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;900&family=Playfair+Display:ital,wght@0,400;1,400;1,700&family=Roboto+Slab:wght@300;400;700&display=swap" rel="stylesheet">
+  </head>
+<body>
+      <div class="header">
+        <a class="brand" href="{% url 'home' %}">
+          <img src="{% static 'images/logo-mobile.svg' %}" class="logomobile" />
+          <img src="{% static 'images/logo.svg' %}" class="logodesktop" />
+        </a>
+        <div class="menu">
+            <a href="/posts">
+              <img src="{% static 'images/dot.svg' %}" class="dot" />
+              Blog
+            </a>
+            <a href="/projects">Projects</a>
+            <a href="/hire">Contact</a>
+        </div>
+        <button id="mobilemenu" class="mobileMenu" onclick="reveal()">
+          &#9776;
+        </button>
+          <ul class="MobileMenu" id="menuzin">
+            <a href="/posts">
+              <li class="list">Blog</li>
+            </a>
+            <a href="/projects">
+              <li class="list">Projects</li>
+            </a>
+            <a href="/hire">
+              <li class="list">Contact</li>
+            </a>
+          </ul>
+    </div>
+    <script src="{% static 'js/navbar.js' %}"></script>
+
+    {% block 'main' %}
+    {% endblock %}
+
+
+</body>
+</html>

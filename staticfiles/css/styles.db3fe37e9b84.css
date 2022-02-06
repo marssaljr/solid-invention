@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-background: #191919;
+  --clr-foreground: #ffffff;
+  --clr-primary: #c84b31;
+  --clr-secondary: #eb5e28;
+  --border-radius: 0.2rem;
+}
+
+body {
+  background: var(--clr-background);
+  color: var(--clr-foreground);
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-primary);
+}
+
+img {
+  border-radius: var(--border-radius);
+}
+
+.main {
+  margin: auto;
+  max-width: 1024px;
+  min-height: 42.188rem;
+  padding: 5px;
+}
+
+/*.header {
+  background: #131313;
+  height: 78px;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}*/

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load markdown_extras %}
+
+{% load static %}
+{% block 'title' %}
+Posts
+{% endblock %}
+{% block 'head'%}
+ <link rel="stylesheet" href="{% static 'css/posts.css' %}"/>
+{% endblock %}
+{% block 'main' %}
+<div class="main">
+  {% for post in object_list %}
+  <a class="articleLink" href="{% url 'post' post.id %}">
+    <div class="articleId">
+      <img loading="lazy" src="{{ post.img }}" class="thumbnail" width="100%"/>
+      <div class="description">
+        <h2>{{ post.title }}</h2>
+        <div class="categories">
+          {% for tag in post.tags.all %}
+          <span class="category">
+            <strong>{{ tag.name }}</strong>
+          </span>
+          {% endfor %}
+        </div>
+        <p>{{ post.description | markdown | safe }}</p>
+      </div>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}
