@@ -18,6 +18,15 @@ jobs:
           SECRET_KEY=${{ secrets.SECRET_KEY }}
           DEBUG=False
           DATABASE=test
+          DJANGO_ALLOWED_HOSTS=${{ secrets.DJANGO_ALLOWED_HOSTS }}
+          DEFAULT_FROM_EMAIL=${{ secrets.DEFAULT_FROM_EMAIL }}
+          DEFAULT_TO_EMAIL=${{ secrets.DEFAULT_TO_EMAIL }}
+          EMAIL_HOST_USER=${{ secrets.EMAIL_HOST_USER }}
+          EMAIL_HOST_PASSWORD=${{ secrets.EMAIL_HOST_PASSWORD }}
+          POSTGRES_NAME=${{ secrets.POSTGRES_NAME }}
+          POSTGRES_USER=${{ secrets.POSTGRES_USER }}
+          POSTGRES_PASS=${{ secrets.POSTGRES_PASS }}
+          POSTGRES_HOST=${{ secrets.POSTGRES_HOST }}
           EOF
           python manage.py collectstatic --no-input
           coverage run --source='.' manage.py test

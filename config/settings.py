@@ -63,7 +63,7 @@ DATABASES_AVAILABLE = {
         'USER': config('POSTGRES_USER'),
         'PASSWORD': config('POSTGRES_PASS'),
         'HOST': config('POSTGRES_HOST'),
-        'PORT': config('POSTGRES_PORT'),
+        'PORT': 5432,
     }, 
     'test': {
         'NAME': BASE_DIR / 'db.sqlite3',
@@ -83,7 +83,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 AUTH_PASSWORD_VALIDATORS = [
