@@ -10,23 +10,29 @@
 
 {% block 'main' %}
 {% if messageSent %}
-    <div class="main">
-      <div class="success">
-        <h3>Thanks <strong>{{name}}</strong></h3>
-        <p>Your message was successfully sent to my special mailbox!</p>
-      </div>
-    </div>
+<div class="main">
+  <div class="success">
+    <h3>Thanks <strong>{{name}}</strong></h3>
+    <p>Your message was successfully sent to my special mailbox!</p>
+  </div>
+</div>
 {% else %}
 <div class="main">
+  {% if error %}
+  <div class="error">
+    <h3>Error <strong>{{error}}</strong></h3>
+    <p></p>
+  </div>
+  {% endif %}
   <div class="formHand">
     <div class="title">
       <h1>Send a mail to me</h1>
       <p>It's free</p>
     </div>
     <form class="form" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit" class="inputButton">Send</button>
+      {% csrf_token %}
+      {{ form }}
+      <button type="submit" class="inputButton">Send</button>
     </form>
   </div>
 </div>

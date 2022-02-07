@@ -9,7 +9,7 @@ class ContactForm(forms.Form):
                 'placeholder': 'Name', 
                 'class': 'inputField',
             }))
-    email = forms.CharField(
+    email = forms.EmailField(
         label=False, 
         required=True, 
         widget=forms.TextInput(

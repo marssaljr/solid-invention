@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'title' %}
+- Contact
+{% endblock %}
+
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'css/hire.css' %}"/>
+{% endblock %}
+
+{% block 'main' %}
+{% if error %}
+    <div class="main">
+      <div class="success">
+        <h3>Error <strong>{{error}}</strong></h3>
+        <p></p>
+      </div>
+    </div>
+{% else %}
+{% endblock %}

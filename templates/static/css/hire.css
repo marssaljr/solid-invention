@@ -42,7 +42,9 @@
   margin: 0.5rem;
   transition: all ease 2s;
 }
-
+.error {
+  color: var(--clr-primary);
+}
 .inputButton:hover,
 .title p:hover,
 .inputField:hover,
