@@ -35,4 +35,3 @@ jobs:
         run: |
           pip install codecov
           codecov -t ${{ secrets.CODECOV_TOKEN }}
-        uses: codecov/codecov-action@v2
