@@ -23,9 +23,9 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    @property
-    def tags_name(self):
-        return [x.name for x in self.tags]
+   # @property
+    #def tags_name(self):
+     #   return [x.name for x in self.tags]
 
     class Meta:
        ordering = ('-updated_at','-created_at',)

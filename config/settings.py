@@ -5,6 +5,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
+DATABASE = config('DATABASE', default='main')
 DEBUG_PROPAGATE_EXCEPTIONS = True
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
@@ -71,10 +72,8 @@ DATABASES_AVAILABLE = {
     },
 }
 
-database = config('DATABASE')
-
 DATABASES = {
-    'default': DATABASES_AVAILABLE[database]
+    'default': DATABASES_AVAILABLE[DATABASE]
 }
 
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')

@@ -1,4 +1,4 @@
-name: Workflow for Codecov solid-invention
+name: Workflow solid-invention
 on: [push, pull_request]
 jobs:
   run:
