@@ -32,4 +32,7 @@ jobs:
           coverage run --source='.' manage.py test
           coverage xml
       - name: Upload coverage to Codecov
+        run: |
+          pip install codecov
+          codecov -t ${{ secrets.CODECOV_TOKEN }}
         uses: codecov/codecov-action@v2
