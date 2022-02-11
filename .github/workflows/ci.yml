@@ -35,6 +35,7 @@ jobs:
           POSTGRES_USER=${{ secrets.POSTGRES_USER }}
           POSTGRES_PASS=${{ secrets.POSTGRES_PASS }}
           POSTGRES_HOST=${{ secrets.POSTGRES_HOST }}          
+          MONGO_URL=${{ secrets.MONGO_URL }}
           EOF
           python manage.py collectstatic --no-input
           coverage run --omit=*/venv/*,*/migrations/*,manage.py,*/config/* --source='.' manage.py test
