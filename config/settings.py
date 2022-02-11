@@ -9,7 +9,7 @@ DATABASE = config("DATABASE", default="main")
 CACHE = config("CACHE", default="main")
 DEBUG_PROPAGATE_EXCEPTIONS = True
 ALLOWED_HOSTS = os.getenv(
-    "DJANGO_ALLOWED_HOSTS", "testserver,127.0.0.1,localhost"
+    "DJANGO_ALLOWED_HOSTS", "marssaljr.herokuapp.com,testserver,127.0.0.1,localhost"
 ).split(",")
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
