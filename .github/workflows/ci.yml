@@ -3,9 +3,6 @@ on: [push, pull_request]
 jobs:
   run:
     runs-on: ubuntu-latest
-    services:
-      redis:
-        image: redis
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -16,14 +13,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run tests and collect coverage
-        env:
-          REDIS_HOST: redis
-          REDIS_PORT: 6379
         run: |
           cat << EOF >> .env
           SECRET_KEY=${{ secrets.SECRET_KEY }}
           DEBUG=False
-          CACHE=test
+          CACHE=main
           DATABASE=test
           DJANGO_ALLOWED_HOSTS=${{ secrets.DJANGO_ALLOWED_HOSTS }}
           DEFAULT_FROM_EMAIL=${{ secrets.DEFAULT_FROM_EMAIL }}
