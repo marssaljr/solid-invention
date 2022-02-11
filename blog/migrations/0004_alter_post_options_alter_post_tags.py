@@ -6,17 +6,17 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0003_alter_post_tags'),
+        ("blog", "0003_alter_post_tags"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='post',
-            options={'ordering': ('-updated_at', '-created_at')},
+            name="post",
+            options={"ordering": ("-updated_at", "-created_at")},
         ),
         migrations.AlterField(
-            model_name='post',
-            name='tags',
-            field=models.ManyToManyField(related_name='tags', to='blog.Tag'),
+            model_name="post",
+            name="tags",
+            field=models.ManyToManyField(related_name="tags", to="blog.Tag"),
         ),
     ]

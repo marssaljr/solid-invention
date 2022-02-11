@@ -133,6 +133,11 @@ ENV/
 env.bak/
 venv.bak/
 
+### Redis ###
+# Ignore redis binary dump (dump.rdb) files
+
+*.rdb
+
 # Spyder project settings
 .spyderproject
 .spyproject

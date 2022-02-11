@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load markdown_extras %}
+{% load cache %}
+
+{% load static %}
+{% block 'title' %}
+Projects
+{% endblock %}
+{% block 'head'%}
+<link rel="stylesheet" href="{% static 'css/projects.css' %}"/>
+{% endblock %}
+{% block 'main' %}
+<div class="main">
+  <div class="grid">
+    {% cache 500 object_list %}
+    {% for project in object_list %}
+    <a class="link" href="{% url 'project' project.id %}">
+      <div class="row">
+        <div class="col-1">
+          <img loading="lazy" src="{{ project.img }}" class="thumbnail"/>
+        </div><!--col-1-->
+        <div class="col-2">
+          <h2>{{ project.title }}</h2>
+          <div class="categories">
+            {% for tag in project.tags.all %}
+            <span class="category">
+              <strong>{{ tag.name }}</strong>
+            </span>
+            {% endfor %}
+          </div><!--category-->
+          <p>{{ project.description | markdown | safe }}</p>
+        </div><!--col-2-->
+      </div><!--row-->
+    </a><!--link-->
+    {% endfor %}
+    {% endcache %}
+  </div><!--grid-->
+</div><!--main-->
+{% endblock %}

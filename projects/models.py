@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils import timezone
 
 
 class Tag(models.Model):
@@ -11,9 +10,8 @@ class Tag(models.Model):
     class Meta:
         ordering = ("name",)
 
-
-class Post(models.Model):
-    title = models.CharField(max_length=120)
+class Project(models.Model):
+    title = models.CharField(max_length=200)
     description = models.TextField(max_length=120)
     tags = models.ManyToManyField(Tag, related_name="tags")
     img = models.TextField()
@@ -23,6 +21,12 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    """
+    @property
+    def tags_name(self):
+        return [x.name for x in self.tags]
+    """
 
     class Meta:
         ordering = (

@@ -1,13 +1,16 @@
 from django.test import SimpleTestCase
 from contact.forms import ContactForm
 
+
 class TestForms(SimpleTestCase):
     def test_contact_form_valid_data(self):
-        form = ContactForm(data={
-            'name': 'andre',
-            'email': 'andre@gmail.com',
-            'message': 'email test case'
-        })
+        form = ContactForm(
+            data={
+                "name": "andre",
+                "email": "andre@gmail.com",
+                "message": "email test case",
+            }
+        )
 
         self.assertTrue(form.is_valid())
 

@@ -20,7 +20,6 @@ window.onclick = function (event) {
 
 // menu mobile
 function reveal() {
-  console.log("clicked");
   if (menu.style.display === "flex") {
     return (menu.style.display = "none");
   }
