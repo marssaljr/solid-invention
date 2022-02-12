@@ -1,8 +1,8 @@
 /*@font-face {
-  font-family: "Charter";
-  src: url("/fonts/charter-400-normal.woff");
-  font-weight: normal;
-  font-style: normal;
+font-family: "Charter";
+src: url("/fonts/charter-400-normal.woff");
+font-weight: normal;
+font-style: normal;
 }*/
 
 .article {
@@ -21,8 +21,8 @@
 .articleBody img,
 .articleThumbnail {
   max-height: 500px;
-  width: 100%;
-  padding: 2;
+  max-width: 100%;
+  padding: 2px;
   margin: 2% auto 5% auto;
   border-radius: 0.4rem;
 }
@@ -86,17 +86,17 @@ h5 {
   margin-bottom: 2rem;
 }
 /*li {
-  list-style-type: disclosure-closed;
-  font-size: 1.5rem;
+list-style-type: disclosure-closed;
+font-size: 1.5rem;
 }*/
 
 /*.codehilite {
-  background: #e8e8e8;
-  background-image: initial;
-  background-color: rgb(37, 40, 42);
-  border-radius: 5px;
-  padding: 5px;
-  margin-bottom: 15px;
+background: #e8e8e8;
+background-image: initial;
+background-color: rgb(37, 40, 42);
+border-radius: 5px;
+padding: 5px;
+margin-bottom: 15px;
 }*/
 
 @media only screen and (max-width: 700px) {
