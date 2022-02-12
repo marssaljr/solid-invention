@@ -3,21 +3,21 @@
 {% load static %}
 
 {% block 'head' %}
-  <link rel="stylesheet" href="{% static 'css/post.css' %}">
-  <meta property="og:type" content="article" />
-  <meta property="article:author" content="Marçal Junior" />
-  <meta property="og:description" content="{{post.description}}" />
-  <meta property="article:tag" content="Programming, Technology" />
-  <meta property="article:published_time" content="{{ post.created_at}}"/>
-  <meta property="og:image" content="{{ post.img}}" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="800" />
-  <meta property="og:image:height" content="600" />
+<link rel="stylesheet" href="{% static 'css/post.css' %}">
+<meta property="og:type" content="article" />
+<meta property="article:author" content="Marçal Junior" />
+<meta property="og:description" content="{{post.description}}" />
+<meta property="article:tag" content="Programming, Technology" />
+<meta property="article:published_time" content="{{ post.created_at}}"/>
+<meta property="og:image" content="{{ post.img}}" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="800" />
+<meta property="og:image:height" content="600" />
 
 {% endblock %}
 
 {% block 'title' %}
-  {{ post.title }}
+{{ post.title }} by 
 {% endblock %}
 
 {% block 'main' %}
@@ -33,6 +33,6 @@
       <br/>
       {{ post.body | markdown | safe }}
     </div>
-</div>
+  </div>
 
-{% endblock %}
+  {% endblock %}
