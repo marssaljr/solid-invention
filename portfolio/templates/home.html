@@ -3,14 +3,23 @@
 
 {% block 'head' %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
-<meta property="og:type" content="article" />
-<meta property="article:author" content="Marçal Junior" />
-<meta property="og:description" content="Hello Friend, This site is my personal portfolio where I share my public and private projects, and write a little about them, programming, and me, of course" />
-<meta property="article:tag" content="Programming, Technology, Personal, Portfolio, Blog" />
+<meta name="title" content="Marçal Junior">
+<meta name="description" content="Hello Friend, This site is my personal portfolio where I share my public and private projects, and write a little about them, programming, and me, of course">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marssaljr.herokuapp.com/">
+<meta property="og:title" content="Marçal Junior">
+<meta property="og:description" content="Hello Friend, This site is my personal portfolio where I share my public and private projects, and write a little about them, programming, and me, of course">
 <meta property="og:image" content="https://marssaljr.herokuapp.com{% static 'images/67934997_2486080248280863_3208459755454464000_n.jpg' %}" />
 <meta property="og:image:type" content="image/jpeg" />
-<meta property="og:image:width" content="800" />
-<meta property="og:image:height" content="600" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://marssaljr.herokuapp.com/">
+<meta property="twitter:title" content="Marçal Junior">
+<meta property="twitter:description" content="Hello Friend, This site is my personal portfolio where I share my public and private projects, and write a little about them, programming, and me, of course">
+<meta property="twitter:image" content="https://marssaljr.herokuapp.com{% static 'images/67934997_2486080248280863_3208459755454464000_n.jpg' %}" />
 
 {% endblock %}
 
