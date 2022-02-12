@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load markdown_extras %}
-{% load cache %}
 
 {% load static %}
 {% block 'title' %}
@@ -11,7 +10,6 @@ Posts
 {% endblock %}
 {% block 'main' %}
 <div class="main">
-  {% cache 500 object_list %}
   {% for post in object_list %}
   <a class="articleLink" href="{% url 'post' post.id %}">
     <div class="articleId">
@@ -30,6 +28,5 @@ Posts
     </div>
   </a>
   {% endfor %}
-  {% endcache %}
 </div>
 {% endblock %}

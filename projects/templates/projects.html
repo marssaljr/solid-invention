@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load markdown_extras %}
-{% load cache %}
 
 {% load static %}
 {% block 'title' %}
@@ -12,7 +11,6 @@ Projects
 {% block 'main' %}
 <div class="main">
   <div class="grid">
-    {% cache 500 object_list %}
     {% for project in object_list %}
     <a class="link" href="{% url 'project' project.id %}">
       <div class="row">
@@ -33,7 +31,6 @@ Projects
       </div><!--row-->
     </a><!--link-->
     {% endfor %}
-    {% endcache %}
   </div><!--grid-->
 </div><!--main-->
 {% endblock %}
