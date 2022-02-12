@@ -6,31 +6,30 @@
 Projects
 {% endblock %}
 {% block 'head'%}
-<link rel="stylesheet" href="{% static 'css/projects.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/posts.css' %}"/>
 {% endblock %}
 {% block 'main' %}
 <div class="main">
-  <div class="grid">
-    {% for project in object_list %}
-    <a class="link" href="{% url 'project' project.id %}">
-      <div class="row">
-        <div class="col-1">
-          <img loading="lazy" src="{{ project.img }}" class="thumbnail"/>
-        </div><!--col-1-->
-        <div class="col-2">
-          <h2>{{ project.title }}</h2>
-          <div class="categories">
-            {% for tag in project.tags.all %}
-            <span class="category">
-              <strong>{{ tag.name }}</strong>
-            </span>
-            {% endfor %}
-          </div><!--category-->
-          <p>{{ project.description | markdown | safe }}</p>
-        </div><!--col-2-->
-      </div><!--row-->
-    </a><!--link-->
-    {% endfor %}
-  </div><!--grid-->
-</div><!--main-->
+  {% for project in object_list %}
+  <a class="articleLink" href="{% url 'project' project.id %}">
+    <div class="articleId">
+      <div class="col-1">
+        <img loading="lazy" src="{{ project.img }}" class="thumbnail" width="100%"/>
+      </div><!--col-1-->
+      <div class="description">
+        <h2>{{ project.title }}</h2>
+        <div class="categories">
+          {% for tag in project.tags.all %}
+          <span class="category">
+            <strong>{{ tag.name }}</strong>
+          </span>
+          {% endfor %}
+        </div>
+        <p>{{ project.description | markdown | safe }}</p>
+      </div>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+</div>
 {% endblock %}
