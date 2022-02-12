@@ -6,8 +6,27 @@
 Projects of 
 {% endblock %}
 {% block 'head'%}
+<!-- Primary Meta Tags -->
+<meta name="title" content="Projects of Marçal Junior">
+<meta name="description" content="My projects, where I tell stories about my experiences with coding, you gonna find all my skills applied to real scenarios.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marssaljr.herokuapp.com/projects/">
+<meta property="og:title" content="Projects of Marçal Junior">
+<meta property="og:description" content="My projects, where I tell stories about my experiences with coding, you gonna find all my skills applied to real scenarios.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1566837945700-30057527ade0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
+<!-- Facebook -->
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://marssaljr.herokuapp.com/projects/">
+<meta property="twitter:title" content="Projects of Marçal Junior">
+<meta property="twitter:description" content="My projects, where I tell stories about my experiences with coding, you gonna find all my skills applied to real scenarios.">
+<meta property="twitter:image" content="https://images.unsplash.com/photo-1566837945700-30057527ade0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
+<!-- Twiter -->
 <link rel="stylesheet" href="{% static 'css/posts.css' %}"/>
 {% endblock %}
+
 {% block 'main' %}
 <div class="main">
   {% for project in object_list %}

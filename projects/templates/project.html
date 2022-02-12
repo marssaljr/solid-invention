@@ -14,6 +14,24 @@
 <meta property="og:image:width" content="800" />
 <meta property="og:image:height" content="600" />
 
+<!-- Primary Meta Tags -->
+<meta name="title" content="{{ project.title }} by Marçal Junior">
+<meta name="description" content="{{ project.description }}">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marssaljr.herokuapp.com/projects/project/{{ project.id }}">
+<meta property="og:title" content="{{ project.title }} by Marçal Junior">
+<meta property="og:description" content="{{ project.description }}">
+<meta property="og:image" content="{{ project.img }}">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://marssaljr.herokuapp.com/projects/project/{{ project.id }}">
+<meta property="twitter:title" content="{{ project.title }} by Marçal Junior">
+<meta property="twitter:description" content="{{ project.description }}">
+<meta property="twitter:image" content="{{ project.img }}">
+
 {% endblock %}
 
 {% block 'title' %}
