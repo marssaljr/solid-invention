@@ -3,7 +3,7 @@ from decouple import config
 import os
 import django_heroku
 
-django_heroku.settings(locals())
+django_heroku.settings(locals(), staticfiles=False)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
