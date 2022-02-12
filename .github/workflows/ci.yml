@@ -24,11 +24,6 @@ jobs:
           DEFAULT_TO_EMAIL=${{ secrets.DEFAULT_TO_EMAIL }}
           EMAIL_HOST_USER=${{ secrets.EMAIL_HOST_USER }}
           EMAIL_HOST_PASSWORD=${{ secrets.EMAIL_HOST_PASSWORD }}
-          REDIS_ENDPOINT=${{ secrets.REDIS_ENDPOINT }}
-          POSTGRES_NAME=${{ secrets.POSTGRES_NAME }}
-          POSTGRES_USER=${{ secrets.POSTGRES_USER }}
-          POSTGRES_PASS=${{ secrets.POSTGRES_PASS }}
-          POSTGRES_HOST=${{ secrets.POSTGRES_HOST }}          
           MONGO_URL=${{ secrets.MONGO_URL }}
           EOF
           python manage.py collectstatic --no-input

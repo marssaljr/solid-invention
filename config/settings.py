@@ -7,7 +7,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
 DEBUG = config("DEBUG", default=False, cast=bool)
 DATABASE = config("DATABASE", default="main")
-CACHE = config("CACHE", default="main")
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = [
@@ -75,40 +74,11 @@ DATABASES_AVAILABLE = {
         "NAME": "marssaljr",
         "CLIENT": {"host": config("MONGO_URL")},
     },
-    "postgres": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": config("POSTGRES_NAME"),
-        "USER": config("POSTGRES_USER"),
-        "PASSWORD": config("POSTGRES_PASS"),
-        "HOST": config("POSTGRES_HOST"),
-        "PORT": 5432,
-    },
     "test": {
         "NAME": BASE_DIR / "db.sqlite3",
         "ENGINE": "django.db.backends.sqlite3",
     },
 }
-
-CACHES_AVAILABLE = {
-    "main": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": config("REDIS_ENDPOINT"),
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient"
-        },
-        "KEY_PREFIX": "redis-marssaljr"
-    },
-    "test": {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis://127.0.0.1:6379/1',
-        'OPTIONS': {
-            'CLIENT_CLASS': 'django_redis.client.DefaultClient'
-        },
-        'KEY_PREFIX': 'redis-test'
-    }
-}
-
-CACHES = {'default': CACHES_AVAILABLE[CACHE]}
 
 DATABASES = {"default": DATABASES_AVAILABLE[DATABASE]}
 
