@@ -2,7 +2,20 @@
 {% load static %}
 
 {% block 'head' %}
-  <link rel="stylesheet" href="{% static 'css/home.css' %}"> 
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<meta property="og:type" content="article" />
+<meta property="article:author" content="Marçal Junior" />
+<meta property="og:description" content="Hello Friend, This site is my personal portfolio where I share my public and private projects, and write a little about them, programming, and me, of course" />
+<meta property="article:tag" content="Programming, Technology, Personal, Portfolio, Blog" />
+<meta property="og:image" content="{% static 'images/pic.svg' %}" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="800" />
+<meta property="og:image:height" content="600" />
+
+{% endblock %}
+
+{% block 'title' %}
+{{ project.title }} by
 {% endblock %}
 
 {% block 'main' %}
@@ -16,11 +29,11 @@
       </div>
       <p class="textHistory">
         I'm a hobbyist Web Developer who study development since 10 years
-            old. I have a solid familiarity of Development procedure and
-            Security... I am nowadays growing my skillset by studying Node,
-            Next, along with Django, and Tests. I believe that with my current
-            experience I would be an excellent choice for Pleno Level/Mid-level
-            developer.
+        old. I have a solid familiarity of Development procedure and
+        Security... I am nowadays growing my skillset by studying Node,
+        Next, along with Django, and Tests. I believe that with my current
+        experience I would be an excellent choice for Pleno Level/Mid-level
+        developer.
       </p>
       <div class="socialsBadges" style="margin-top: 1rem;">
         <a style="margin: 0.5rem;" target="_blank" href="https://linkedin.com/in/marssaljr">
