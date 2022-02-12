@@ -3,20 +3,20 @@ from decouple import config
 import os
 import django_heroku
 
-django_heroku.settings(locals(), staticfiles=False)
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
 DEBUG = config("DEBUG", default=False, cast=bool)
 DATABASE = config("DATABASE", default="main")
 CACHE = config("CACHE", default="main")
 DEBUG_PROPAGATE_EXCEPTIONS = True
+
 ALLOWED_HOSTS = [
-    "marssaljr.herokuapp.com",
-    "testserver",
-    "127.0.0.1",
-    "localhost"
+    '127.0.0.1',
+    'testserver',
+    'localhost',
+    'marssaljr.herokuapp.com'
 ]
+
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
 SECURE_SSL_REDIRECT = False
@@ -153,3 +153,4 @@ MEDIA_URL = "/media/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+django_heroku.settings(locals(), staticfiles=False)
